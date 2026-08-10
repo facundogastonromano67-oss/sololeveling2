@@ -1,0 +1,14 @@
+{
+  "name": "Sistema G30",
+  "short_name": "G30",
+  "description": "Misiones, entrenamiento, alimentación y progreso personal.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050914",
+  "theme_color": "#050914",
+  "lang": "es-AR",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,7 +1,19 @@
 {
-  "name":"solo-leveling-real-g30",
-  "version":"0.1.0",
-  "private":true,
-  "description":"PWA estática del Sistema G30",
-  "scripts":{"test":"node tests/validate.mjs"}
+  "name": "g30-system",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Sistema G30: misiones, entrenamiento, alimentación y progreso personal",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node tests/validate.mjs && node tests/local-store.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.2"
+  },
+  "devDependencies": {
+    "vite": "^8.2.1"
+  }
 }
