@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#050916" />
+    <meta name="description" content="Sistema G30 de misiones y transformación personal." />
+    <title>Solo Leveling Real — G30</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell" id="app">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <header class="topbar">
+        <button class="brand" data-go="inicio" aria-label="Ir al inicio">
+          <span class="brand-mark">G30</span>
+          <span><strong>SISTEMA</strong><small>DÍA 08 / 30</small></span>
+        </button>
+        <div class="top-actions">
+          <span class="sync-pill">● Sincronizado</span>
+          <button class="icon-button" data-overlay="avisos" aria-label="Notificaciones">◌<i></i></button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="view active" data-view="inicio">
+          <article class="identity-card hud-card">
+            <div class="avatar">FR<span>E</span></div>
+            <div class="identity-copy">
+              <small>BIENVENIDO DE NUEVO</small>
+              <h1>Facu</h1>
+              <div class="badges"><span>RANGO E</span><span class="gold">🔥 8 DÍAS</span><span id="account-badge">GRATIS</span></div>
+            </div>
+            <div class="level-box"><small>NIVEL</small><strong>09</strong><span><b id="xp-total">1143</b> XP</span></div>
+            <div class="progress-ring" id="progress-ring"><div><strong id="today-percent">0%</strong><small>HOY</small></div></div>
+          </article>
+
+          <article class="plan-status">
+            <div><small>PLAN G30 · MODO INTENSIVO</small><strong>Hoy decidís si avanzás.</strong></div>
+            <div><small>REINICIO DIARIO</small><strong class="mono">05:42:18</strong></div>
+          </article>
+
+          <section class="section-block">
+            <header class="section-heading">
+              <div><small class="eyebrow red">PRIORIDAD DEL SISTEMA</small><h2>Misiones del Sistema</h2></div>
+              <span class="counter" id="system-counter">0 / 3</span>
+            </header>
+            <p class="section-note">Tres desafíos adaptativos, distintos y más exigentes que tus misiones fijas.</p>
+            <div class="mission-list" id="system-missions"></div>
+          </section>
+
+          <section class="section-block">
+            <header class="section-heading">
+              <div><small class="eyebrow">SIEMPRE VISIBLES</small><h2>Misiones obligatorias</h2></div>
+              <span class="counter" id="mandatory-counter">0 / 6</span>
+            </header>
+            <div class="mission-list" id="mandatory-missions"></div>
+          </section>
+
+          <section class="quick-tools">
+            <button data-overlay="calendario"><span>▦</span><div><strong>Semana</strong><small>Planificá tus días</small></div></button>
+            <button data-overlay="cuaderno"><span>□</span><div><strong>Cuaderno</strong><small>Escribí libremente</small></div></button>
+            <button data-overlay="cierre"><span>✓</span><div><strong>Cerrar el día</strong><small>Revisá tu progreso</small></div></button>
+          </section>
+        </section>
+
+        <section class="view" data-view="plan">
+          <header class="page-title"><small class="eyebrow">CICLO ACTIVO · DÍA 08</small><h1>Plan G30</h1><p>Misiones, entrenamiento y alimentación dentro de una sola pantalla.</p></header>
+          <article class="mode-banner"><div><small>MODO ACTUAL</small><strong>INTENSIVO</strong></div><p>Las misiones quedaron bloqueadas al comenzar este ciclo.</p><span>BLOQUEADO</span></article>
+          <div class="accordion-stack">
+            <article class="accordion open">
+              <button class="accordion-trigger"><span class="number">01</span><span><strong>Plan personal</strong><small>Misiones, calendario y modo</small></span><b>−</b></button>
+              <div class="accordion-content">
+                <div class="stat-grid triple"><article><small>CUMPLIMIENTO</small><strong id="plan-percent">0%</strong></article><article class="gold"><small>RACHA</small><strong>8 días</strong></article><article class="purple"><small>PRÓXIMO RANGO</small><strong>72%</strong></article></div>
+                <h3>Objetivo del ciclo</h3><p>Construir una rutina estable de entrenamiento, alimentación y trabajo concentrado durante 30 días.</p>
+                <button class="secondary-button" data-overlay="calendario">VER CALENDARIO SEMANAL</button>
+              </div>
+            </article>
+            <article class="accordion">
+              <button class="accordion-trigger"><span class="number">02</span><span><strong>Entrenamiento</strong><small class="training-status">Disponible con Premium</small></span><b>+</b></button>
+              <div class="accordion-content premium-content" data-premium-content="training"></div>
+            </article>
+            <article class="accordion">
+              <button class="accordion-trigger"><span class="number">03</span><span><strong>Alimentación</strong><small class="nutrition-status">Disponible con Premium</small></span><b>+</b></button>
+              <div class="accordion-content premium-content" data-premium-content="nutrition"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" data-view="academia">
+          <header class="page-title"><small class="eyebrow">CONOCIMIENTO APLICABLE</small><h1>Academia</h1><p>Clases detalladas para aprender en serio. No entregan XP: el valor está en aplicarlas.</p></header>
+          <article class="academy-hero hud-card">
+            <div class="academy-icon">A</div>
+            <div><small>CLASE RECOMENDADA · 18 MIN</small><h2>Cómo progresar sin entrenar al fallo siempre</h2><p>Aprendé a reconocer esfuerzo, repeticiones en reserva y cuándo aumentar una carga.</p><button class="primary-button">COMENZAR CLASE</button></div>
+          </article>
+          <article class="daily-limit"><small>ACCESO DE HOY</small><strong>1 clase gratuita disponible</strong><p>Los cursos comprados no tienen límite diario.</p></article>
+          <div class="course-grid">
+            <article class="course-card"><div><small>ACADEMIA</small></div><section><small>12 CLASES</small><h3>Fundamentos de fuerza</h3><footer><strong>USD 4,99</strong><button>VER CURSO</button></footer></section></article>
+            <article class="course-card"><div><small>ACADEMIA</small></div><section><small>10 CLASES + RECETAS</small><h3>Nutrición sin complicaciones</h3><footer><strong>USD 3,99</strong><button>VER CURSO</button></footer></section></article>
+            <article class="course-card"><div><small>ACADEMIA</small></div><section><small>8 CLASES</small><h3>Disciplina aplicable</h3><footer><strong>USD 2,99</strong><button>VER CURSO</button></footer></section></article>
+          </div>
+        </section>
+
+        <section class="view" data-view="tienda">
+          <header class="page-title"><small class="eyebrow">MEJORAS Y CONTENIDO</small><h1>Tienda</h1><p>Las compras amplían opciones; nunca reemplazan el progreso real.</p></header>
+          <article class="premium-card">
+            <div><small>G30 PREMIUM</small><h2>Entrenamiento + alimentación<br />sin anuncios</h2><p>Rutina completa, plan de comidas, registros avanzados y ajustes inteligentes.</p><div class="price"><strong>USD 1,99</strong><span>/ mes</span></div></div>
+            <button class="primary-button" id="premium-button">ACTIVAR DEMO PREMIUM</button>
+          </article>
+          <h2 class="store-heading">Monedas</h2>
+          <div class="product-grid">
+            <article class="product"><span>◈</span><h3>500 monedas</h3><strong>USD 0,99</strong><button>VER</button></article>
+            <article class="product"><i>+20%</i><span>◈</span><h3>1.200 monedas</h3><strong>USD 1,99</strong><button>VER</button></article>
+            <article class="product"><i>MEJOR VALOR</i><span>◈</span><h3>3.000 monedas</h3><strong>USD 3,99</strong><button>VER</button></article>
+          </div>
+          <h2 class="store-heading">Cofres y temporada</h2>
+          <div class="product-grid">
+            <article class="product"><span>◇</span><h3>Cofre de habilidades</h3><strong>350 monedas</strong><button>VER</button></article>
+            <article class="product"><span>✦</span><h3>Pase de temporada</h3><strong>USD 2,99</strong><button>VER</button></article>
+            <article class="product"><span>◎</span><h3>Marco de rango</h3><strong>180 monedas</strong><button>VER</button></article>
+          </div>
+          <p class="fair-play">NO SE PUEDE COMPRAR XP, RANGOS, RACHAS NI RESULTADOS COMPETITIVOS.</p>
+        </section>
+
+        <section class="view" data-view="perfil">
+          <article class="profile-head hud-card">
+            <div class="avatar large">FR<span>E</span></div>
+            <div><small>RANGO E · NIVEL 09</small><h1>Facu</h1><p>Guerrero del G30 · Gremio Centinelas</p></div>
+            <button class="icon-button">⋮</button>
+          </article>
+          <div class="profile-tabs"><button class="active">RESUMEN</button><button>PROGRESO</button><button>LOGROS</button></div>
+          <div class="stat-grid profile-stats"><article><small>XP TOTAL</small><strong id="profile-xp">1143</strong></article><article class="gold"><small>RACHA</small><strong>8 días</strong></article><article><small>PLANES G30</small><strong>1 activo</strong></article><article class="purple"><small>MISIONES</small><strong>43</strong></article></div>
+          <article class="chart-card">
+            <header class="section-heading"><div><small class="eyebrow">ÚLTIMOS 7 DÍAS</small><h2>Consistencia</h2></div><strong>82%</strong></header>
+            <div class="bar-chart"><div><i style="height:72%"></i><small>L</small></div><div><i style="height:88%"></i><small>M</small></div><div><i style="height:64%"></i><small>X</small></div><div><i style="height:92%"></i><small>J</small></div><div><i style="height:78%"></i><small>V</small></div><div><i style="height:96%"></i><small>S</small></div><div><i id="today-bar" style="height:8%"></i><small>D</small></div></div>
+          </article>
+          <article class="attribute-card">
+            <header class="section-heading"><div><small class="eyebrow">ATRIBUTOS</small><h2>Evolución</h2></div></header>
+            <div class="attribute"><span>Fuerza</span><i><b style="width:64%"></b></i><strong>64</strong></div>
+            <div class="attribute"><span>Resistencia</span><i><b style="width:58%"></b></i><strong>58</strong></div>
+            <div class="attribute"><span>Disciplina</span><i><b style="width:76%"></b></i><strong>76</strong></div>
+            <div class="attribute"><span>Nutrición</span><i><b style="width:49%"></b></i><strong>49</strong></div>
+            <div class="attribute"><span>Enfoque</span><i><b style="width:68%"></b></i><strong>68</strong></div>
+            <div class="attribute"><span>Recuperación</span><i><b style="width:54%"></b></i><strong>54</strong></div>
+          </article>
+          <div class="settings-list">
+            <button id="evaluation-button"><span>Revisar evaluación y plan</span><b>›</b></button>
+            <button><span>Privacidad y cuenta</span><b>›</b></button>
+            <button><span>Notificaciones y sonido</span><b>›</b></button>
+            <button id="premium-toggle"><span>Alternar vista Premium (demo)</span><b>INACTIVA</b></button>
+            <button id="guest-button"><span>Ver experiencia de invitado</span><b>›</b></button>
+          </div>
+        </section>
+      </main>
+
+      <div class="floating-actions">
+        <button class="assistant-fab" data-overlay="asistente"><span>✦</span><small>ASISTENTE</small></button>
+        <button class="arena-fab" data-overlay="arena"><span>⚔</span><small>ARENA</small></button>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Navegación principal">
+        <button class="active" data-go="inicio"><span>⌂</span><small>Inicio</small></button>
+        <button data-go="plan"><span>▣</span><small>Plan G30</small></button>
+        <button data-go="academia"><span>◇</span><small>Academia</small></button>
+        <button data-go="tienda"><span>✦</span><small>Tienda</small></button>
+        <button data-go="perfil"><span>●</span><small>Perfil</small></button>
+      </nav>
+    </div>
+
+    <div class="panel-backdrop" id="panel-backdrop" hidden>
+      <aside class="side-panel">
+        <header><div><small class="eyebrow">SISTEMA G30</small><h2 id="panel-title"></h2></div><button id="panel-close" aria-label="Cerrar">×</button></header>
+        <div id="panel-content"></div>
+      </aside>
+    </div>
+    <div class="modal-backdrop" id="ad-modal" hidden>
+      <article class="ad-modal"><small>PUBLICIDAD · VERSIÓN GRATUITA</small><div><strong>ESPACIO PUBLICITARIO</strong><p>En producción se mostrará un anuncio no personalizado.</p></div><button class="secondary-button" id="ad-close">CONTINUAR</button><button class="text-button" data-go="tienda">Eliminar anuncios por USD 1,99/mes</button></article>
+    </div>
+    <div class="guest-screen" id="guest-screen" hidden>
+      <header class="brand"><span class="brand-mark">G30</span><span><strong>SISTEMA</strong><small>TRANSFORMACIÓN REAL</small></span></header>
+      <section><small class="eyebrow">TU VIDA. TU PROGRESIÓN.</small><h1>Convertí tus objetivos en un sistema que puedas cumplir.</h1><p>Misiones diarias, progreso real, entrenamiento, alimentación, Academia, Arena y gremios en una sola experiencia.</p><button class="primary-button" id="register-demo">CREAR CUENTA Y GENERAR MI PLAN</button><button class="text-button" id="enter-demo">Entrar a la demostración</button></section>
+      <div class="guest-features"><article><small>01</small><strong>Misiones</strong><p>Organizá tus obligaciones y hacé visible tu progreso.</p></article><article><small>02</small><strong>Plan G30</strong><p>Entrenamiento y alimentación con Premium.</p></article><article><small>03</small><strong>Arena</strong><p>Competí, formá un gremio y superá mazmorras.</p></article></div>
+      <footer>CREÁ TU CUENTA PARA GENERAR TU PLAN G30</footer>
+    </div>
+    <div class="toast" id="toast" hidden></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

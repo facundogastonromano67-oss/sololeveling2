@@ -1,0 +1,7 @@
+{
+  "name":"solo-leveling-real-g30",
+  "version":"0.1.0",
+  "private":true,
+  "description":"PWA estática del Sistema G30",
+  "scripts":{"test":"node tests/validate.mjs"}
+}
