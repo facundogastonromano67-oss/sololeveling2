@@ -182,14 +182,15 @@ El cierre registra energía, disciplina, reflexión y resultado.
 
 Rangos: E, D, C, B, A y S.
 
-Atributos:
+Atributos y habilidades:
 
-- Fuerza.
-- Resistencia.
-- Disciplina.
-- Nutrición.
-- Enfoque.
-- Recuperación.
+- Intelecto: inteligencia aplicada, conocimiento, aprendizaje, resolución de
+  problemas y creatividad.
+- Carisma: comunicación, habilidades sociales, liderazgo, control emocional e
+  integridad/valores.
+- Rendimiento: disciplina, constancia, organización, productividad y finanzas
+  personales.
+- Físico: fuerza, resistencia, velocidad/potencia, movilidad y salud física.
 
 La Academia no entrega XP. No se puede comprar XP, niveles, rangos, rachas ni
 cumplimientos.

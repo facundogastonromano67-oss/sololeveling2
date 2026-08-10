@@ -9,7 +9,9 @@ npm install
 npm run dev
 ```
 
-Abrí la dirección que muestra la terminal. En modo local ya podés crear y completar misiones, generar un plan, registrar entrenamientos y comidas, escribir notas y cerrar el día.
+Abrí la dirección que muestra la terminal. En modo local empezás desde la
+bienvenida, completás la evaluación, revisás el plan y después podés usar todas
+las funciones diarias, incluso sin crear una cuenta.
 
 ## 2. Crear el proyecto en Supabase
 

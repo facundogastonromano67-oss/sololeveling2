@@ -15,6 +15,8 @@ La aplicación funciona en dos modos:
 - Plan de comidas, recetas simples y registro de comidas.
 - Cuaderno privado y cierre diario.
 - Cursos, clases detalladas y progreso de Academia.
+- Veinte habilidades agrupadas en Intelecto, Carisma, Rendimiento y Físico.
+- Monedas, compras internas, logros, Arena, Mazmorras y gremios.
 
 ## Seguridad aplicada
 
@@ -26,9 +28,16 @@ La aplicación funciona en dos modos:
 - `generate-plan` valida la sesión antes de usar la clave de servicio.
 - La clave `service_role` vive únicamente en Supabase Edge Functions.
 - El cuaderno queda fuera del contexto del futuro Asistente salvo autorización explícita.
+- Las compras con monedas y la recompensa de Mazmorras se calculan en funciones
+  transaccionales; el navegador no puede acreditar saldo por su cuenta.
+- Los puntajes públicos de Arena se publican únicamente cuando el servidor los
+  marca como verificados.
 
 ## Deliberadamente pendiente
 
-No se activaron todavía pagos, monedas, anuncios reales, IA, rankings, gremios ni resultados competitivos. Esas funciones necesitan validación del servidor, antifraude y pruebas específicas; los botones correspondientes no simulan una compra real.
+Los pagos reales, anuncios, ranking público, guerras entre gremios e IA generativa
+siguen desactivados. Stripe debe validar cada suscripción mediante webhooks; Arena
+pública requiere antifraude y moderación. La aplicación ofrece mientras tanto una
+Arena, un ranking y un gremio locales que no simulan resultados de otros usuarios.
 
 Referencias oficiales: [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [Auth](https://supabase.com/docs/guides/auth), [Edge Functions](https://supabase.com/docs/guides/functions).

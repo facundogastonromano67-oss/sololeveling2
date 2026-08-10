@@ -5,18 +5,19 @@ import { execFileSync } from "node:child_process";
 
 const root = path.resolve(import.meta.dirname, "..");
 const required = [
-  "index.html", "src/main.js", "src/styles.css", "src/data/catalog.js", "src/services/backend.js",
+  "index.html", "src/main.js", "src/styles.css", "src/data/catalog.js", "src/data/content.js", "src/services/backend.js",
   "public/manifest.webmanifest", "public/sw.js", "public/assets/icon.svg",
   "public/assets/hero-awakening.webp", "public/assets/academy-archive.webp", "public/assets/dungeon-gate.webp",
   "supabase/config.toml", "supabase/seed.sql",
   "supabase/migrations/202608090001_initial_schema.sql",
   "supabase/migrations/202608090002_security_and_functions.sql",
+  "supabase/migrations/202608090003_progression_economy_competition.sql",
   "supabase/functions/generate-plan/index.ts",
-  "docs/INSTALACION_SUPABASE.md", "docs/ARQUITECTURA_BACKEND.md"
+  "docs/INSTALACION_SUPABASE.md", "docs/ARQUITECTURA_BACKEND.md", "docs/PRIMER_USO.md", ".env.example"
 ];
 for (const file of required) assert.ok(fs.existsSync(path.join(root, file)), `Falta ${file}`);
 
-for (const file of ["src/main.js", "src/data/catalog.js", "src/services/backend.js", "src/services/local-store.js"])
+for (const file of ["src/main.js", "src/data/catalog.js", "src/data/content.js", "src/services/backend.js", "src/services/local-store.js"])
   execFileSync(process.execPath, ["--check", path.join(root, file)], { stdio: "inherit" });
 
 const security = fs.readFileSync(path.join(root, "supabase/migrations/202608090002_security_and_functions.sql"), "utf8");
@@ -27,5 +28,8 @@ const seed = fs.readFileSync(path.join(root, "supabase/seed.sql"), "utf8");
 assert.ok((seed.match(/'user'/g) || []).length >= 12, "Faltan misiones base");
 assert.ok((seed.match(/exercise_library/g) || []).length >= 1, "Falta catálogo de ejercicios");
 assert.ok((seed.match(/public\.recipes/g) || []).length >= 1, "Faltan recetas");
+const progression = fs.readFileSync(path.join(root, "supabase/migrations/202608090003_progression_economy_competition.sql"), "utf8");
+for (const text of ["user_skills", "economy_ledger", "arena_scores", "dungeon_runs", "guilds", "purchase_store_item", "complete_daily_dungeon", "refresh_daily_system_missions", "play_arena_duel", "enable row level security"])
+  assert.match(progression, new RegExp(text, "i"), `Falta módulo seguro: ${text}`);
 JSON.parse(fs.readFileSync(path.join(root, "public/manifest.webmanifest"), "utf8"));
 console.log("Sistema G30 validado: frontend, backend, seguridad, contenido e imágenes presentes.");
